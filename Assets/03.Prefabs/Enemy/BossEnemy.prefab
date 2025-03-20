@@ -154,6 +154,7 @@ MonoBehaviour:
   BossBoomBulletPrefab: {fileID: 4947301198092286248, guid: f09bba05bfefec14db00be345e6fa29e, type: 3}
   ExplosionVFXPrefab: {fileID: 8044542234970896258, guid: 720d86a9a8f8f604a859c901a857037e, type: 3}
   ExplosionBFXPrefab: {fileID: 8941659683152736585, guid: 19bdbc1c40005734787a50c13abaf891, type: 3}
+  BossSpawner: {fileID: 0}
   _bulletCount: 12
   _radius: 3
   Health: 1000
@@ -161,7 +162,7 @@ MonoBehaviour:
   AttackCooltime: 1
   RotateAttackCooltime: 0.2
   Cooltimer: 0
-  RotateModeRotateSpeed: 720
+  RotateModeRotateSpeed: 1080
   _rotateModeR: 0
   _attackType: 0
 --- !u!95 &2325217623581050980

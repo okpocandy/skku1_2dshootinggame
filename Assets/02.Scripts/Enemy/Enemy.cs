@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
     private void OnDeath(Damage damage)
     {
         // 죽은 Enemy 수 증가
-        if(damage.Type == DamageType.Bullet)
+        if(damage.Type == DamageType.Bullet || damage.Type == DamageType.Lightning)
         {
             DiedEnemyCount++;
         }

@@ -3,7 +3,8 @@ using UnityEngine;
 public enum PlayMode
 {
     Auto,
-    Mannual
+    Mannual,
+    Lightning,
 }
 
 public class PlayerFire : MonoBehaviour
@@ -41,7 +42,8 @@ public class PlayerFire : MonoBehaviour
         {
             return;
         }
-
+        if (MyPlayer.PlayMode == PlayMode.Lightning)
+            return;
         // 자동 모드 이거나 "Fire1" 버튼이 입력되면..
         if (MyPlayer.PlayMode == PlayMode.Auto || Input.GetButtonDown("Fire1"))
         {

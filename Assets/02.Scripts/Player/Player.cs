@@ -79,12 +79,22 @@ public class Player : MonoBehaviour
         {
             PlayMode = PlayMode.Mannual;
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             if(muzzleLight != null)
             {
                 isLightningOn = !isLightningOn;
-
+                if(isLightningOn)
+                {
+                    PlayMode = PlayMode.Lightning;
+                    MoveSpeed *= 2.5f;
+                }
+                else
+                {
+                    PlayMode = PlayMode.Mannual;
+                    MoveSpeed /= 2.5f;
+                }
+                
                 muzzleLight.SetActive(isLightningOn);
             }
         }

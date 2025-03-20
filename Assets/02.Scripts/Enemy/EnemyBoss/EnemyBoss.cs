@@ -50,7 +50,7 @@ public class EnemyBoss : MonoBehaviour
         Player = FindAnyObjectByType<PlayerMove>();
         _animator = GetComponent<Animator>();
         UI_Game.Instance.BossHealthSliderOn();
-        
+        UI_Game.Instance.WarningOn();
     }
 
     private void Update()
@@ -128,6 +128,15 @@ public class EnemyBoss : MonoBehaviour
     public void TakeDamage(Damage damage)
     {
         Health -= damage.Value;
+        float hpRatio = Health / MaxHealth;
+        if (hpRatio < 0.3f)
+        {
+            _attackType = AttackType.Random;
+        }
+        else if (hpRatio < 0.7f)
+        {
+            _attackType = AttackType.Rotate;
+        }
         UI_Game.Instance.BossHealth(Health / MaxHealth);
 
         _animator.SetTrigger("Hit");

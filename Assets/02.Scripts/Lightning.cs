@@ -11,7 +11,7 @@ public class Lightning : MonoBehaviour
     private void Start()
     {
         transform.position = LightningMuzzle.transform.position + Vector3.up * 2;
-        _damage = (int)(this.Damgae * Time.deltaTime);
+        _damage = Damgae;
     }
     private void Update()
     {
@@ -20,7 +20,6 @@ public class Lightning : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("err");
         if (collision.CompareTag("Enemy"))
         {
             Damage damage = new Damage()
@@ -30,6 +29,10 @@ public class Lightning : MonoBehaviour
             };
             Enemy enemy = collision.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
+        }
+        else if(collision.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

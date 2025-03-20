@@ -1010,6 +1010,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7343236319080401903, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
   m_PrefabInstance: {fileID: 4123208570348888062}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &522984472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 70738526508343903, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
+  m_PrefabInstance: {fileID: 4123208570348888062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522984465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab998dd54b887cc4c822c1a140afb760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &546550687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1514990973468579062, guid: 14909b88646e00b4c8b0f7266046059a, type: 3}
@@ -1122,6 +1133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MySpriteRenderer: {fileID: 0}
   ScrollSpeed: 0.4
+  FixScrollSpeed: 0.2
+  Player: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,6 +1321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MySpriteRenderer: {fileID: 0}
   ScrollSpeed: 0.2
+  FixScrollSpeed: 0.2
+  Player: {fileID: 0}
 --- !u!1 &654920112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MySpriteRenderer: {fileID: 0}
   ScrollSpeed: 0.6
+  FixScrollSpeed: 0.2
+  Player: {fileID: 522984472}
 --- !u!1 &904359287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1162641163836399316, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
@@ -2058,6 +2075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MySpriteRenderer: {fileID: 0}
   ScrollSpeed: 0.2
+  FixScrollSpeed: 0.2
+  Player: {fileID: 0}
 --- !u!1 &1329371091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2189,9 @@ MonoBehaviour:
   BossPrefab: {fileID: 3444196863365696280, guid: 44b44aecc8ed80945b4021c17ce5278c, type: 3}
   BossCounter: 10
   _isDestory: 0
+  _timer: 0
   _warningTimer: 2
+  _isBossOn: 0
 --- !u!1001 &1494394299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2530,17 +2551,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: fx_lightning
       objectReference: {fileID: 0}
-    - target: {fileID: 254557701113824383, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2143982670056395809, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143982670056395809, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143982670056395809, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2582,18 +2599,6 @@ PrefabInstance:
       propertyPath: LightningMuzzle
       value: 
       objectReference: {fileID: 904359287}
-    - target: {fileID: 4426289470880278541, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507968589838848242, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507968589838848242, guid: d9cc8460e0001734f9f7bfb1944baebe, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3194,6 +3199,14 @@ PrefabInstance:
       propertyPath: LightPrefab
       value: 
       objectReference: {fileID: 1373952527}
+    - target: {fileID: 1162641163836399316, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3842469694786792280, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.09
+      objectReference: {fileID: 0}
     - target: {fileID: 5867935757747466119, guid: d7cecc159261bcb4daffb2fd100d5a3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

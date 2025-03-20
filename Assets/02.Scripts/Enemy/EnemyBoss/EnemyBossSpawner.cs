@@ -12,9 +12,10 @@ public class EnemyBossSpawner : MonoBehaviour
     public bool _isDestory = false;
 
 
-    private float _timer;
+    public float _timer;
     [SerializeField]
     private float _warningTimer = 2f;
+    [SerializeField]
     private bool _isBossOn = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,10 +31,11 @@ public class EnemyBossSpawner : MonoBehaviour
         {
             if (_isBossOn)
                 return;
+            _isBossOn = true;
             boss = Instantiate(BossPrefab);
             boss.transform.position = this.transform.position;
-            UI_Game.Instance.WarningOn();
-            _isBossOn = true;
+            
+            
             foreach (var enemySpawner in EnemySpawners)
             {
                 enemySpawner.SetActive(false);
@@ -43,6 +45,7 @@ public class EnemyBossSpawner : MonoBehaviour
         WarnUI();
         if(_isDestory)
         {
+            Debug.Log("v파괴");
             foreach (var enemySpawner in EnemySpawners)
             {
                 enemySpawner.SetActive(true);
@@ -54,8 +57,10 @@ public class EnemyBossSpawner : MonoBehaviour
 
     private void WarnUI()
     {
+        Debug.Log("들어왔는데");
         if (_isBossOn)
         {
+            Debug.Log("왜?");
             _timer += Time.deltaTime;
             if (_timer >= _warningTimer)
             {

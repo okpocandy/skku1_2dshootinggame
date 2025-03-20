@@ -8,6 +8,8 @@ public class Background : MonoBehaviour
     private Material _material;
     public SpriteRenderer MySpriteRenderer;
     public float ScrollSpeed = 0.6f;
+    public float FixScrollSpeed = 0.2f;
+    public Player Player;
 
     private MaterialPropertyBlock _mpb;
     
@@ -29,13 +31,20 @@ public class Background : MonoBehaviour
         
         _mpb = new MaterialPropertyBlock();
         
-        
 
 
     }
 
     private void Update()
     {
+        if (Player.PlayMode == PlayMode.Lightning)
+        {
+            ScrollSpeed = FixScrollSpeed * 5;
+        }
+        else
+        {
+            ScrollSpeed = FixScrollSpeed;
+        }
         // 방향을 구하고,
         Vector2 direction = Vector2.up;
 
@@ -47,6 +56,6 @@ public class Background : MonoBehaviour
         _mpb.SetVector(MainTexId, new Vector4(1f, 1f, _currentOffset.x, _currentOffset.y));
         MySpriteRenderer.SetPropertyBlock(_mpb);
         
-
+        
     }
 }
